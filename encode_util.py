@@ -22,7 +22,7 @@ def __bits_to_bytes(bits):
         if b == 3:
             str_bits += '11'
     hex_bits = format(int(str_bits, base=2), 'x')
-    if len(hex_bits) % 2 == 1:
+    if len(hex_bits) & 1 == 1:
         hex_bits = "0"+hex_bits
     byts = bytes.fromhex(hex_bits)
     byts = b"\x00" * str_bits.count("00000000", 0,
