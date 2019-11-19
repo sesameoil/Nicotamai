@@ -1,3 +1,4 @@
+#!/bin/python3
 import encode_util
 import argparse
 prog_name = "Nicotamai"
@@ -12,7 +13,7 @@ parser = argparse.ArgumentParser(prog=prog_name,
                                  "IN_FILE, or standard input,"
                                  "to OUT_FILE, or standard output.",
                                  usage="usage: %(prog)s [OPTION]... [IN_FILE] [OUT_FILE]",
-                                 epilog=f"Written by {writer}.\nLicence: {license}.",
+                                 epilog=f"Writter: {writer}.\nLicence: {license}.",
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument('-d', '--decode', action='store_true',
                     help='decode data')
@@ -21,7 +22,7 @@ parser.add_argument('IN_FILE', type=argparse.FileType('r'),
 parser.add_argument('OUT_FILE', type=argparse.FileType('w'),
                     help='Output. When OUT_FILE is -, write standard output')
 parser.add_argument('-v', '--version', action='version',
-                    version=(f"%(prog)s {version}\n\nWritten by {writer}.\nLicence: {license}."))
+                    version=(f"%(prog)s {version}\n\nWritter: {writer}.\nLicence: {license}."))
 
 args = parser.parse_args()
 if args.decode:
