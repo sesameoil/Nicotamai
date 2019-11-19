@@ -1,3 +1,7 @@
+# Licence:CC0 1.0 Universal.
+# See Also LICENSE, or <https://creativecommons.org/publicdomain/zero/1.0/legalcode>."
+
+
 def __bytes_to_2bits(byts):
     bits = []
     for b in byts:
