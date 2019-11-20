@@ -1,5 +1,6 @@
 # Licence:CC0 1.0 Universal.
 # See Also LICENSE, or <https://creativecommons.org/publicdomain/zero/1.0/legalcode>."
+from collections import deque
 
 
 def __bytes_to_2bits(byts):
@@ -31,17 +32,25 @@ def __bits_to_bytes(bits):
 
 
 def encode(byts):
+    latest_4_encoded = deque(maxlen=4)
+    match = deque(['二', '子', '玉', '舞'])
     bits = __bytes_to_2bits(byts)
     bits_encoded = ""
     for b in bits:
         if b == 0:
             bits_encoded += '二'
+            latest_4_encoded.append('二')
         if b == 1:
             bits_encoded += '子'
+            latest_4_encoded.append('子')
         if b == 2:
             bits_encoded += '玉'
+            latest_4_encoded.append('玉')
         if b == 3:
             bits_encoded += '舞'
+            latest_4_encoded.append('舞')
+        if latest_4_encoded == match:
+            bits_encoded += "\n"  # add '\n' to every after "二子玉舞"
     return bits_encoded
 
 
