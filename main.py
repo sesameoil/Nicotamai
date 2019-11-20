@@ -1,7 +1,7 @@
 #!/bin/python3
 import encode_util
 import argparse
-prog_name = "Nicotamai"
+prog_name = "nicotamai"
 version = "0.1.0"
 writer = "sesameoil"
 license = "CC0 1.0 Universal. See Also LICENSE, or "\
