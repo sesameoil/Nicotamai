@@ -1,6 +1,6 @@
 #!/bin/python3
-if __name__ == 'main':
-    import encode_util
+def main():
+    from nicotamai import encode_util
     import argparse
     prog_name = "nicotamai"
     version = "0.1.0"
@@ -36,3 +36,7 @@ if __name__ == 'main':
             with args.OUT_FILE as OUT_FILE:
                 nicotamai = encode_util.encode(byts)
                 OUT_FILE.write(nicotamai + '\n')
+
+
+if __name__ == 'main':
+    main()
