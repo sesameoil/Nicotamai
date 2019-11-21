@@ -1,6 +1,6 @@
 #!/bin/python3
 def main():
-    from nicotamai import encode_util
+    import encode_util
     import argparse
     prog_name = "nicotamai"
     version = "0.1.0"
@@ -26,8 +26,8 @@ def main():
 
     args = parser.parse_args()
     if args.decode:
-        with args.IN_FILE.read() as nicotamai:
-            byts = encode_util.decode(nicotamai)
+        with args.IN_FILE as IN_FILE:
+            byts = encode_util.decode(IN_FILE.read())
             with args.OUT_FILE.buffer as buffer_OUT_FILE:
                 buffer_OUT_FILE.write(byts)
     else:
@@ -38,5 +38,5 @@ def main():
                 OUT_FILE.write(nicotamai + '\n')
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
