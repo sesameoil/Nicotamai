@@ -1,7 +1,12 @@
 #!/bin/python3
+import argparse
+try:
+    from .encode_util import encode, decode  # When nicotamai is NOT installed
+except ModuleNotFoundError:
+    from nicotamai import encode, decode  # When nicotami is installed
+
+
 def main():
-    import encode_util
-    import argparse
     prog_name = "nicotamai"
     version = "0.1.0"
     writer = "sesameoil"
@@ -27,14 +32,14 @@ def main():
     args = parser.parse_args()
     if args.decode:
         with args.IN_FILE as IN_FILE:
-            byts = encode_util.decode(IN_FILE.read())
+            byts = decode(IN_FILE.read())
             with args.OUT_FILE.buffer as buffer_OUT_FILE:
                 buffer_OUT_FILE.write(byts)
     else:
         with args.IN_FILE.buffer as buffer_IN_FILE:
             byts = buffer_IN_FILE.read()
             with args.OUT_FILE as OUT_FILE:
-                nicotamai = encode_util.encode(byts)
+                nicotamai = encode(byts)
                 OUT_FILE.write(nicotamai + '\n')
 
 
