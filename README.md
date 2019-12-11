@@ -1,8 +1,10 @@
 # Nicotamai
 
-Encode binary 二子玉舞
+ファイルを二子玉舞に変換します  
+Encode file 二子玉舞
 
-## Install
+
+## インストール Install
 
 ```
 $ python3 -m pip install git+https://github.com/sesameoil/Nicotamai.git
@@ -15,21 +17,21 @@ $ git clone https://github.com/sesameoil/Nicotamai.git
 $ python3 -m pip install ./Nicotamai
 ```
 
-## Uninstall
+## アンインストール Uninstall
 
 ```
 python3 -m pip uninstall nicotamai
 ```
 
-## Usage
+## 使い方 Usage
 
-### Encode
+### 変換 Encode
 
 ```
 $ nicotamai [IN_FILE] [OUT_FILE]
 ```
 
-Example
+例  Example
 
 ```
 $ echo abc > hoge
@@ -37,18 +39,20 @@ $ nicotamai hoge fuga
 $ cat fuga
 子玉二子子玉二玉子玉二舞二二玉玉
 ```
-
-When [IN_FILE]  is  - , read standard input.  
-When [OUT_FILE] is  - , write standard output.  
+`IN_FILE` が  `-` のとき、標準入力を読みます。  
+`OUT_FILE` が  `-`のとき、 標準出力に書き込みます。  
+When `IN_FILE`  is  `-` , read standard input.  
+When `OUT_FILE` is  `-` , write standard output.  
   
-Example
+例 Example
 
 ```
 $ echo abc | nicotamai - -
 子玉二子子玉二玉子玉二舞二二玉玉
 ```
 
-Insert New lines every after **二子玉舞**
+`二子玉舞`が出現するたびに改行されます。  
+Insert `\n` every after `二子玉舞`.
 
 ```
 $ echo lm | nicotamai - -
@@ -56,7 +60,13 @@ $ echo lm | nicotamai - -
 子二二玉玉
 ```
 
-### Decode
+### 復号 Decode
+
+```
+$ nicotamai -d [IN_FILE] [OUT_FILE]
+```
+
+例 Example
 
 ```
 $ echo 子玉二子子玉二玉子玉二舞二二玉玉 > hoge
@@ -65,10 +75,12 @@ $cat fuga
 abc
 ```
 
-When IN_FILE is **-**, read standard input.  
-When OUT_FILE is **-**, write standard output. 
-  
-Example
+`IN_FILE` が  `-` のとき、標準入力を読みます。  
+`OUT_FILE` が  `-`のとき、 標準出力に書き込みます。  
+When `IN_FILE` is `-`, read standard input.  
+When `OUT_FILE` is `-`, write standard output.   
+
+例 Example
 
 ```
 echo 子玉二子子玉二玉子玉二舞二二玉玉 | nicotamai -d - -
