@@ -3,6 +3,10 @@
 ファイルを二子玉舞に変換します  
 Encode file 二子玉舞
 
+## ライセンス Licence
+
+CC0 1.0 Universal.
+See Also LICENCE, or [https://creativecommons.org/publicdomain/zero/1.0/legalcode](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 
 ## インストール Install
 
