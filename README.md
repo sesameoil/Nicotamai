@@ -75,7 +75,7 @@ $ nicotamai -d [IN_FILE] [OUT_FILE]
 ```
 $ echo 子玉二子子玉二玉子玉二舞二二玉玉 > hoge
 $ nicotamai -d hoge fuga
-$cat fuga
+$ cat fuga
 abc
 ```
 
