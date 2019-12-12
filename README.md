@@ -24,7 +24,7 @@ $ python3 -m pip install ./Nicotamai
 ## アンインストール Uninstall
 
 ```
-python3 -m pip uninstall nicotamai
+$ python3 -m pip uninstall nicotamai
 ```
 
 ## 使い方 Usage
@@ -82,11 +82,11 @@ abc
 `IN_FILE` が  `-` のとき、標準入力を読みます。  
 `OUT_FILE` が  `-`のとき、 標準出力に書き込みます。  
 When `IN_FILE` is `-`, read standard input.  
-When `OUT_FILE` is `-`, write standard output.   
+When `OUT_FILE` is `-`, write standard output.
 
 例 Example
 
 ```
-echo 子玉二子子玉二玉子玉二舞二二玉玉 | nicotamai -d - -
+$ echo 子玉二子子玉二玉子玉二舞二二玉玉 | nicotamai -d - -
 abc
 ```
